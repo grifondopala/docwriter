@@ -1,0 +1,29 @@
+.default_input_container{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid var(--dark-black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+    gap: 10px;
+}
+
+.default_input_container > input{
+    width: auto;
+    height: auto;
+    outline: none;
+    font-size: 12px;
+    border: none;
+    color: var(--dark-black);
+    font-weight: 800;
+    font-family: 'Inter';
+}
+
+.default_input_container > img{
+    width: 32px;
+    height: 32px;
+}

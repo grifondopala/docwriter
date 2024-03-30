@@ -1,0 +1,130 @@
+#auth__container{
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+}
+
+.auth__container__form{
+    width: 600px;
+}
+
+.auth__container__change_stage{
+    width: 400px;
+    background-color: red;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(160,134,181,1) 0%, rgba(143,0,255,1) 100%);
+}
+
+.auth__container__change_stage.sign_in.changing{
+    animation: moveLeft 1.5s;
+    transform: translateX(-600px);
+}
+
+.auth__container__change_stage.sign_up.changing{
+    animation: moveRight 1.5s;
+    transform: translateX(600px);
+}
+
+.auth__container__form.changing{
+    transition: calc(1.5s/4) all;
+    opacity: 0;
+}
+
+.auth__container__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    animation: showElement 0.5s;
+}
+
+.auth__container__content.changing{
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.auth__container__change_stage__title{
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 0px;
+    font-family: 'Inter';
+}
+
+.auth__container__change_stage__label{
+    color: white;
+    text-align: center;
+    font-weight: 800;
+    font-size: 12px;
+    width: 300px;
+    font-family: 'Inter';
+    text-wrap: 'wrap';
+}
+
+.auth__container__form__title{
+    color: var(--dark-black);
+    text-align: center;
+    font-family: 'Inter';
+}
+
+.auth__container__img{
+    width: 300px;
+    height: 400px;
+    margin: 0;
+}
+
+.auth__container__form__inputs{
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.error__text{
+    font-family: 'Inter';
+    font-size: 12px;
+    margin-top: 0;
+    font-weight: 600;
+    color: red
+}
+
+@keyframes moveLeft {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-600px);
+    }
+}
+
+@keyframes moveRight {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(600px);
+    }
+}
+
+@keyframes showElement{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

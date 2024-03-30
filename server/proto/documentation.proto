@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package documentation;
+
+import "google/protobuf/empty.proto";
+
+service DocumentationService{
+    rpc CreateDocumetation(CreateDocumentationDto) returns (Documentation){};
+    rpc DeleteDocumentation(DeleteDocumentationDto) returns(google.protobuf.Empty){};
+    rpc GetUserDocumentations(GetUserDocumentationsDto) returns (Documentations){};
+}
+
+message CreateDocumentationDto{ 
+    string name = 1;
+    bool isPrivate = 2;
+    string userId = 3;
+}
+
+message Documentation{
+    string id = 1;
+    string userId = 2;
+    string name = 3;
+    bool isPrivate = 4;
+}
+
+message GetUserDocumentationsDto{
+   string userId = 1; 
+}
+
+message Documentations{
+    repeated Documentation documentations = 1;
+}
+
+message DeleteDocumentationDto{
+    string documentId = 1;
+    string userId = 2;
+}
